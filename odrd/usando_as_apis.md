@@ -1,4 +1,4 @@
-Para usar as apis da google dentro do nosso sistema, é necessário configurar a autenticação para acessar as APIs da google
+Para usar as apis da google dentro do nosso sistema, é necessário configurar a autenticação para acessar as APIs.
 
 ## Autenticação
 
