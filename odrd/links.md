@@ -13,3 +13,10 @@
 [ODRD get vehicle](https://developers.google.com/maps/documentation/transportation-logistics/on-demand-rides-deliveries-solution/reference/fleet-engine/rest/v1/providers.vehicles/get?hl=pt-br)
 
 [ODRD list vehicles](https://developers.google.com/maps/documentation/transportation-logistics/on-demand-rides-deliveries-solution/reference/fleet-engine/rest/v1/providers.vehicles/list?hl=pt-br)
+
+VER SOBRE A FALA SOBRE PASSAGEIROS
+
+sobre o aceite ou nao de uma entrega
+usando odrd, como devolver uma entrega
+
+status da entrega interfere no aceite de pedidos

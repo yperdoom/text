@@ -1,6 +1,6 @@
 'use strict'
 
-const { api, config } = require('../route_config')
+const { api, config } = require('../config/route_config')
 
 
 /**
@@ -13,49 +13,51 @@ module.exports = ({
   // Instancia um novo veículo associado a um fornecedor de serviço de transporte por aplicativo ou entregas sob demanda.
   create: async (requestBody) => {
     const body = {
-      vehicleState,
-      supportedTripTypes,
-      maximumCapacity,
-      vehicleType
+      vehicleState: requestBody.vehicleState,
+      supportedTripTypes: requestBody.supportedTripTypes,
+      maximumCapacity: requestBody.maximumCapacity,
+      vehicleType: requestBody.vehicleType
     }
 
     const { data, status } = await api.post('/vehicles', body, config)
 
-    return data
+    return { data, status }
   },
 
   // Retorna um veículo do Fleet Engine.
-  get: async (trip) => {
-    const { data, status } = await api.get('/vehicles/*}', config)
+  get: async (vehicle, params) => {
 
-    return data
+
+    const { data, status } = await api.get(`/vehicles/${vehicle}`, config)
+
+    return { data, status }
   },
 
   // Retorna uma lista paginada de veículos associados a um provedor que corresponde às opções de solicitação.
   list: async () => {
-    const { data, status } = await api.post('/vehicles', data, config)
+    const { data, status } = await api.get('/vehicles', config)
 
-    return data
+    return { data, status }
   },
 
   // Retorna uma lista de veículos que correspondem às opções de solicitação.
   search: async () => {
-    const { data, status } = await api.post('/vehicles:search', data, config)
+    const { data, status } = await api.post('/vehicles:search', config)
 
-    return data
+    return { data, status }
   },
 
   // Grava dados atualizados do veículo no Fleet Engine.
-  update: async (data) => {
-    const { data, status } = await api.put('/vehicles/', data, config)
+  update: async (requestBody) => {
+    const { data, status } = await api.put('/vehicles/', requestBody, config)
 
-    return data
+    return { data, status }
   },
 
   // Atualiza parcialmente os atributos de um veículo
-  updateAttributes: async (data) => {
-    const { data, status } = await api.put('/vehicles/*}:updateAttributes', data, config)
+  updateAttributes: async (requestBody) => {
+    const { data, status } = await api.put('/vehicles/*}:updateAttributes', requestBody, config)
 
-    return data
+    return { data, status }
   },
 })
