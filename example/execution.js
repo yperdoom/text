@@ -1,19 +1,24 @@
 const billableTrips = require('./apis/bills/billable_trips')
+const { testeApis } = require('./apis/config/route_config')
 const trips = require('./apis/trips/trips')
 const vehicles = require('./apis/vehicles/vehicles')
 
 const execution = async () => {
   try {
-    const { oauth2 } = require('./apis/config/route_config')
+    // const { oauth2 } = require('./apis/config/route_config')
+    // await oauth2()
 
-    await oauth2()
+    // const { data, status } = await testeApis()
+    const response = await vehicles.list()
 
-    // const { data, status } = await vehicles.list()
-    // console.log('data :: ', data)
-    // console.log('details :: ', data.error.details)
-    // console.log('status :: ', status)
+    console.log('data :: ', response.data)
+    console.log('status :: ', response.status)
+
+    if (response?.error) {
+      console.log('details :: ', response?.error?.details)
+    }
   } catch (e) {
-    console.log(e.response)
+    console.log(e)
   }
 }
 

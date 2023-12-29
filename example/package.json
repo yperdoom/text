@@ -4,6 +4,7 @@
   "description": "",
   "main": "route_config.js",
   "scripts": {
+    "start": "node execution.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
     "oauth": "^0.10.0"
   }
 }
