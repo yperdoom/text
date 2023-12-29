@@ -19,3 +19,5 @@ sobre o aceite ou nao de uma entrega
 usando odrd, como devolver uma entrega
 
 status da entrega interfere no aceite de pedidos
+
+perguntar sobre o simulador de tráfego

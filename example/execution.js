@@ -5,10 +5,10 @@ const vehicles = require('./apis/vehicles/vehicles')
 
 const execution = async () => {
   try {
-    // const { oauth2 } = require('./apis/config/route_config')
-    // await oauth2()
+    const { oauth2 } = require('./apis/config/route_config')
+    await oauth2()
 
-    // const { data, status } = await testeApis()
+    const { data, status } = await testeApis()
     const response = await vehicles.list()
 
     console.log('data :: ', response.data)
